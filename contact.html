@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Home Muse | Contact</title>
+    <meta name="description" content="Get in touch with Home Muse — inspiration lives here.">
+    
+    <!-- Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-92TVJ42TQW"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-92TVJ42TQW');
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#000000',
+                        'primary-foreground': '#FFFFFF',
+                        secondary: '#1F1F1F',
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Lato', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(12px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #000000;
+            color: #F5F5F5;
+            font-family: 'Lato', sans-serif;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+        .header-scrolled {
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        .contact-card {
+            background: rgba(31, 31, 31, 0.6);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: transform 0.3s ease, border-color 0.2s;
+        }
+        .contact-card:hover {
+            border-color: rgba(255, 255, 255, 0.25);
+            transform: translateY(-4px);
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #444;
+            border-radius: 10px;
+        }
+        @keyframes gentlePulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+        .email-glow {
+            animation: gentlePulse 2.5s infinite;
+        }
+    </style>
+</head>
+<body class="bg-black text-gray-200 antialiased">
+
+    <header class="fixed w-full top-0 z-50 transition-all duration-500 py-2" id="header">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            <div class="text-2xl sm:text-3xl font-bold tracking-widest cursor-pointer" onclick="window.location.href='/'">
+                <span class="text-white">HOME</span>
+                <span class="text-gray-400">MUSE</span>
+            </div>
+            <div class="hidden md:flex gap-8 items-center">
+                <a href="/" class="text-white hover:text-gray-300 transition text-sm uppercase tracking-wider font-semibold">Home</a>
+                <a href="/gallery.html" class="text-white hover:text-gray-300 transition text-sm uppercase tracking-wider">Gallery</a>
+                <a href="/blog.html" class="text-white hover:text-gray-300 transition text-sm uppercase tracking-wider">Blog</a>
+                <a href="/about.html" class="text-white hover:text-gray-300 transition text-sm uppercase tracking-wider">About</a>
+                <a href="/contact.html" class="text-white hover:text-gray-300 transition text-sm uppercase tracking-wider border-b border-white/40">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="min-h-screen flex items-center justify-center px-4 pt-32 pb-20">
+        <div class="max-w-4xl w-full mx-auto text-center">
+            <div class="flex justify-center mb-6">
+                <div class="w-16 h-px bg-white/30"></div>
+            </div>
+            
+            <h1 class="text-5xl sm:text-7xl lg:text-8xl font-bold text-white uppercase tracking-widest mb-8">
+                Contact
+            </h1>
+            <p class="text-gray-400 text-lg max-w-xl mx-auto mb-12 leading-relaxed">
+                We'd love to hear from you. Whether it's a collaboration, a design question, or just a hello — drop us a line.
+            </p>
+            
+            <div class="contact-card rounded-2xl p-8 md:p-12 max-w-lg mx-auto backdrop-blur-sm">
+                <div class="mb-6">
+                    <svg class="w-12 h-12 mx-auto text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                </div>
+                <h2 class="text-2xl font-serif font-semibold text-white mb-3 tracking-wide">Email us directly</h2>
+                <a href="mailto:homemuse21@gmail.com" 
+                   class="inline-block text-2xl md:text-3xl font-medium text-white bg-white/5 hover:bg-white/10 transition-all duration-300 px-6 py-3 rounded-full email-glow border border-white/10 hover:border-white/30">
+                    homemuse21@gmail.com
+                </a>
+                <p class="text-gray-500 text-sm mt-6">We aim to respond within 48 hours.</p>
+            </div>
+            
+            <div class="mt-12 text-gray-600 text-sm">
+                <p>© Home Muse — inspiration lives here.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-black border-t border-gray-800 py-8 text-center text-gray-500 text-xs">
+        <p>© 2026 Home Muse. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 30) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

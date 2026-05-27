@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Muse Blog | Design Guides for Real Homes</title>
+    <meta name="description" content="Practical home decor guides for small spaces, mixing patterns, renter-friendly upgrades, and color confidence.">
+    
+    <!-- Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-92TVJ42TQW"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-92TVJ42TQW');
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#000000',
+                        secondary: '#1F1F1F',
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Lato', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #000000;
+            color: #F5F5F5;
+            font-family: 'Lato', sans-serif;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+        .guide-card {
+            transition: transform 0.3s ease;
+        }
+        .guide-card:hover {
+            transform: translateY(-4px);
+        }
+        .header-scrolled {
+            background: rgba(0,0,0,0.95);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #444;
+            border-radius: 10px;
+        }
+        .guide-image {
+            transition: transform 0.5s ease;
+        }
+        .group:hover .guide-image {
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+<body>
+    <header class="fixed w-full top-0 z-50 transition-all duration-500 py-2" id="header">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            <div class="text-2xl sm:text-3xl font-bold tracking-widest cursor-pointer" onclick="window.location.href='/'">
+                <span class="text-white">HOME</span><span class="text-gray-500">MUSE</span>
+                <span class="text-xs text-gray-400 align-top ml-1">BLOG</span>
+            </div>
+            <div class="hidden md:flex gap-8 items-center">
+                <a href="/" class="text-white hover:text-gray-300 transition text-sm uppercase tracking-wider font-semibold">Home</a>
+                <a href="/gallery.html" class="text-white hover:text-gray-300 transition text-sm uppercase tracking-wider">Gallery</a>
+                <a href="/blog.html" class="text-white hover:text-gray-300 transition text-sm uppercase tracking-wider border-b border-white/40">Blog</a>
+                <a href="/about.html" class="text-white hover:text-gray-300 transition text-sm uppercase tracking-wider">About</a>
+                <a href="/contact.html" class="text-white hover:text-gray-300 transition text-sm uppercase tracking-wider">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="relative pt-36 pb-20 md:pt-44 md:pb-28 bg-gradient-to-b from-black via-gray-950 to-black">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-xs uppercase tracking-widest text-gray-400 mb-4">Decoration Guides</p>
+            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">Design Guides<br><span class="text-gray-400">for Real Homes</span></h1>
+            <p class="text-lg text-gray-300 max-w-xl mx-auto leading-relaxed">Practical, honest advice on the home decor challenges most people face — small rooms, mixing patterns, rental limits, and finding your color confidence.</p>
+        </div>
+    </section>
+
+    <section id="guides" class="py-12 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-white uppercase tracking-widest mb-4">4 Common Decor Problems, Solved</h2>
+            <div class="w-20 h-px bg-white/30 mx-auto"></div>
+            <p class="text-gray-400 mt-6 max-w-xl mx-auto">From cramped layouts to color confusion — here are practical blueprints you can actually use.</p>
+        </div>
+    </section>
+
+    <section id="smallspace" class="py-16 md:py-24 bg-gradient-to-b from-black to-gray-950 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <div class="order-2 lg:order-1 space-y-6">
+                    <span class="text-xs uppercase tracking-widest text-gray-400 bg-white/5 px-3 py-1 rounded">Guide 01</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-white leading-tight">Small Space, Big Style</h2>
+                    <p class="text-gray-300 text-base leading-relaxed">Cramped rooms, clutter, and poor flow are among the most common home complaints. The good news is that smart furniture choices and a few layout principles can transform even the smallest apartment into a space that feels open and intentional.</p>
+                    <div class="space-y-6 mt-4">
+                        <div class="flex gap-5">
+                            <div class="text-3xl font-black text-white/40 font-serif">1</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Go vertical with storage</h3>
+                                <p class="text-gray-400">Use floor-to-ceiling shelves, wall-mounted desks, and hanging plants to draw the eye upward.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5">
+                            <div class="text-3xl font-black text-white/40 font-serif">2</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Multi‑purpose furniture</h3>
+                                <p class="text-gray-400">Ottomans with hidden storage, nesting coffee tables, sofa beds, and folding desks.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5">
+                            <div class="text-3xl font-black text-white/40 font-serif">3</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Light tones and mirrors</h3>
+                                <p class="text-gray-400">Stick to light neutrals, soft pastels, or a single tonal palette.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2 overflow-hidden rounded-xl shadow-2xl group">
+                    <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&auto=format" alt="Cozy small apartment living room" class="guide-image w-full h-full object-cover aspect-[4/3]" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="patterns" class="py-16 md:py-24 bg-black border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <div class="order-2 lg:order-2 space-y-6">
+                    <span class="text-xs uppercase tracking-widest text-gray-400 bg-white/5 px-3 py-1 rounded">Guide 02</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-white leading-tight">Mastering Pattern Mixing</h2>
+                    <p class="text-gray-300 text-base leading-relaxed">Fear of clashing patterns holds many people back from creating a layered, collected look. The secret lies in balancing scale, repeating colors, and using texture as a neutral anchor.</p>
+                    <div class="space-y-6 mt-4">
+                        <div class="flex gap-5">
+                            <div class="text-3xl font-black text-white/40 font-serif">1</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Combine different scales</h3>
+                                <p class="text-gray-400">Pair one large‑scale print with a medium geometric and a tiny motif.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5">
+                            <div class="text-3xl font-black text-white/40 font-serif">2</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Texture is the neutral</h3>
+                                <p class="text-gray-400">Linen, wool, velvet, and jute add depth without visual noise.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5">
+                            <div class="text-3xl font-black text-white/40 font-serif">3</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Use a solid anchor</h3>
+                                <p class="text-gray-400">Start with a neutral sofa or rug. Add patterned pillows and curtains.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-1 overflow-hidden rounded-xl shadow-2xl group">
+                    <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=800&auto=format" alt="Living room with mixed patterns and textures" class="guide-image w-full h-full object-cover aspect-[4/3]" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="renter" class="py-16 md:py-24 bg-gradient-to-b from-black to-gray-950 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <div class="order-2 lg:order-1 space-y-6">
+                    <span class="text-xs uppercase tracking-widest text-gray-400 bg-white/5 px-3 py-1 rounded">Guide 03</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-white leading-tight">Renter‑Friendly Transformations</h2>
+                    <p class="text-gray-300 text-base leading-relaxed">White walls and strict leases don't mean you have to live with a bland space. With removable products and non‑damage tricks, you can add personality while keeping your deposit safe.</p>
+                    <div class="space-y-6 mt-4">
+                        <div class="flex gap-5">
+                            <div class="text-3xl font-black text-white/40 font-serif">1</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Peel‑and‑stick everything</h3>
+                                <p class="text-gray-400">Removable wallpaper, backsplash tiles, and floor stickers.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5">
+                            <div class="text-3xl font-black text-white/40 font-serif">2</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Command hooks and tension rods</h3>
+                                <p class="text-gray-400">Hang curtains, art, or lightweight shelves without drilling.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5">
+                            <div class="text-3xl font-black text-white/40 font-serif">3</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Layered rugs & throw pillows</h3>
+                                <p class="text-gray-400">Transform a space instantly with soft furnishings.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2 overflow-hidden rounded-xl shadow-2xl group">
+                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&auto=format" alt="Renter-friendly apartment" class="guide-image w-full h-full object-cover aspect-[4/3]" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="color" class="py-16 md:py-24 bg-black border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <div class="order-2 lg:order-2 space-y-6">
+                    <span class="text-xs uppercase tracking-widest text-gray-400 bg-white/5 px-3 py-1 rounded">Guide 04</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-white leading-tight">Color Confidence: The 60‑30‑10 Rule</h2>
+                    <p class="text-gray-300 text-base leading-relaxed">Choosing a cohesive color palette doesn't have to be intimidating. The 60‑30‑10 rule is a designer's secret that works for every room.</p>
+                    <div class="space-y-6 mt-4">
+                        <div class="flex gap-5">
+                            <div class="text-3xl font-black text-white/40 font-serif">60%</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Dominant color</h3>
+                                <p class="text-gray-400">Your walls, large furniture, or flooring. Usually a neutral.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5">
+                            <div class="text-3xl font-black text-white/40 font-serif">30%</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Secondary color</h3>
+                                <p class="text-gray-400">Accent walls, larger pieces, or textiles.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5">
+                            <div class="text-3xl font-black text-white/40 font-serif">10%</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Accent color</h3>
+                                <p class="text-gray-400">Art, pillows, plants, or decorative objects.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-1 overflow-hidden rounded-xl shadow-2xl group">
+                    <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&auto=format" alt="Colorful modern bathroom" class="guide-image w-full h-full object-cover aspect-[4/3]" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black border-t border-gray-800 py-8 text-center text-gray-600 text-sm">
+        <p>© 2026 Home Muse. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 30) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

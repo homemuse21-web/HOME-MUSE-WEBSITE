@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Home Muse | About — Designers & Guides</title>
+    <meta name="description" content="Home Muse is a collective of designers crafting inspirational home decor and practical solution guides.">
+    
+    <!-- Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-92TVJ42TQW"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-92TVJ42TQW');
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#000000',
+                        'primary-foreground': '#FFFFFF',
+                        secondary: '#1F1F1F',
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Lato', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #000000;
+            color: #F5F5F5;
+            font-family: 'Lato', sans-serif;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+        .header-scrolled {
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        .about-card {
+            background: rgba(31, 31, 31, 0.5);
+            backdrop-filter: blur(2px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: transform 0.3s ease, border-color 0.2s;
+        }
+        .about-card:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-4px);
+        }
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #444;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-black text-gray-200 antialiased">
+
+    <header class="fixed w-full top-0 z-50 transition-all duration-500 py-2" id="header">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            <div class="text-2xl sm:text-3xl font-bold tracking-widest cursor-pointer" onclick="window.location.href='/'">
+                <span class="text-white">HOME</span>
+                <span class="text-gray-400">MUSE</span>
+            </div>
+            <div class="hidden md:flex gap-8 items-center">
+                <a href="/" class="text-white hover:text-gray-300 transition text-sm uppercase tracking-wider font-semibold">Home</a>
+                <a href="/gallery.html" class="text-white hover:text-gray-300 transition text-sm uppercase tracking-wider">Gallery</a>
+                <a href="/blog.html" class="text-white hover:text-gray-300 transition text-sm uppercase tracking-wider">Blog</a>
+                <a href="/about.html" class="text-white hover:text-gray-300 transition text-sm uppercase tracking-wider border-b border-white/40">About</a>
+                <a href="/contact.html" class="text-white hover:text-gray-300 transition text-sm uppercase tracking-wider">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="relative pt-36 pb-20 md:pt-44 md:pb-28 bg-gradient-to-b from-black via-gray-950 to-black">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-block mb-4 px-4 py-1 border border-white/20 rounded-full text-xs tracking-widest text-gray-300">Collective of Designers</div>
+            <h1 class="text-5xl sm:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight">We design <br><span class="text-gray-400">homes with soul</span></h1>
+            <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                Home Muse is a group of interior designers, stylists, and solution architects. We merge inspirational aesthetics with practical, real‑life guides.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-black border-t border-gray-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-xs uppercase tracking-widest text-gray-400 bg-white/5 px-3 py-1 rounded">Our why</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mt-4 mb-6">Inspiration meets <br>actionable design</h2>
+                    <p class="text-gray-300 text-lg leading-relaxed mb-4">
+                        We believe every home should tell a story — your story. But we also know that beautiful spaces need practical solutions. That's why we create inspirational room concepts alongside step‑by‑step guides.
+                    </p>
+                    <p class="text-gray-400 leading-relaxed">
+                        From small‑space hacks to renter‑friendly upgrades, our team translates high‑end design into everyday reality.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 gap-5">
+                    <div class="about-card rounded-xl p-6 text-center">
+                        <div class="stat-number text-4xl font-bold text-white mb-2">15+</div>
+                        <div class="text-gray-400 text-sm uppercase tracking-wide">Design experts</div>
+                    </div>
+                    <div class="about-card rounded-xl p-6 text-center">
+                        <div class="stat-number text-4xl font-bold text-white mb-2">120+</div>
+                        <div class="text-gray-400 text-sm uppercase tracking-wide">Practical guides</div>
+                    </div>
+                    <div class="about-card rounded-xl p-6 text-center">
+                        <div class="stat-number text-4xl font-bold text-white mb-2">8k+</div>
+                        <div class="text-gray-400 text-sm uppercase tracking-wide">Homes inspired</div>
+                    </div>
+                    <div class="about-card rounded-xl p-6 text-center">
+                        <div class="stat-number text-4xl font-bold text-white mb-2">4</div>
+                        <div class="text-gray-400 text-sm uppercase tracking-wide">Core values</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-gradient-to-b from-gray-950 to-black border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <h2 class="text-4xl sm:text-5xl font-bold text-white uppercase tracking-widest mb-4">Two sides of our work</h2>
+                <div class="w-20 h-px bg-white/30 mx-auto mb-6"></div>
+                <p class="text-gray-400 max-w-xl mx-auto">Inspirational aesthetics + practical guides — because dreams need a blueprint.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="bg-black/40 border border-white/10 rounded-2xl p-8 hover:border-white/20 transition">
+                    <div class="mb-5">
+                        <svg class="w-10 h-10 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-white mb-3">Inspirational Designs</h3>
+                    <p class="text-gray-400 leading-relaxed mb-5">
+                        Curated mood boards, real home tours, and aesthetic concepts that spark joy. We showcase cozy bedrooms, warm minimalism, mudrooms, and entire home overhauls.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li class="flex gap-2"><span class="text-white/60">✦</span> 11+ Cozy bedroom ideas</li>
+                        <li class="flex gap-2"><span class="text-white/60">✦</span> Warm aesthetic galleries</li>
+                        <li class="flex gap-2"><span class="text-white/60">✦</span> Seasonal decor inspiration</li>
+                    </ul>
+                </div>
+
+                <div class="bg-black/40 border border-white/10 rounded-2xl p-8 hover:border-white/20 transition">
+                    <div class="mb-5">
+                        <svg class="w-10 h-10 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-white mb-3">Practical Guides</h3>
+                    <p class="text-gray-400 leading-relaxed mb-5">
+                        Actionable solutions for real home challenges: small space layouts, mixing patterns without fear, renter‑friendly upgrades, and color confidence.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li class="flex gap-2"><span class="text-white/60">→</span> Small space, big style</li>
+                        <li class="flex gap-2"><span class="text-white/60">→</span> Pattern mixing masterclass</li>
+                        <li class="flex gap-2"><span class="text-white/60">→</span> Renter‑friendly transformations</li>
+                        <li class="flex gap-2"><span class="text-white/60">→</span> 60‑30‑10 color rule</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-black border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-white uppercase tracking-widest mb-3">The Collective</h2>
+                <p class="text-gray-400">A multidisciplinary team of designers, writers, and solution architects.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center group">
+                    <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center mb-4 border border-white/10 group-hover:border-white/30 transition">
+                        <span class="text-4xl font-serif text-white/80">EM</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Elena Marchetti</h3>
+                    <p class="text-gray-500 text-sm">Creative Director</p>
+                    <p class="text-gray-500 text-xs mt-2">Interior architecture & mood storytelling</p>
+                </div>
+                <div class="text-center group">
+                    <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center mb-4 border border-white/10 group-hover:border-white/30 transition">
+                        <span class="text-4xl font-serif text-white/80">DC</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">David Chen</h3>
+                    <p class="text-gray-500 text-sm">Lead Designer</p>
+                    <p class="text-gray-500 text-xs mt-2">Minimalism & functional spaces</p>
+                </div>
+                <div class="text-center group">
+                    <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center mb-4 border border-white/10 group-hover:border-white/30 transition">
+                        <span class="text-4xl font-serif text-white/80">SR</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Sophia Rivera</h3>
+                    <p class="text-gray-500 text-sm">Guide Editor</p>
+                    <p class="text-gray-500 text-xs mt-2">Practical solutions & renter hacks</p>
+                </div>
+                <div class="text-center group">
+                    <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center mb-4 border border-white/10 group-hover:border-white/30 transition">
+                        <span class="text-4xl font-serif text-white/80">MK</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Maya Kapoor</h3>
+                    <p class="text-gray-500 text-sm">Color & Texture Specialist</p>
+                    <p class="text-gray-500 text-xs mt-2">Palette psychology, pattern mixing</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black border-t border-gray-800 py-8 text-center text-gray-600 text-sm">
+        <p>© 2026 Home Muse. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 30) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

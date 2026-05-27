@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Home Muse Gallery | Curated Interiors</title>
+  
+  <!-- Google Tag Manager -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-92TVJ42TQW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-92TVJ42TQW');
+  </script>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#000000',
+            'primary-foreground': '#FFFFFF',
+            secondary: '#1F1F1F',
+            'secondary-foreground': '#FFFFFF',
+          },
+          fontFamily: {
+            'display': ['Playfair Display', 'serif'],
+            'body': ['Lato', 'sans-serif'],
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.4s ease-out',
+            'scale-in': 'scaleIn 0.2s ease',
+          },
+          keyframes: {
+            fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+            scaleIn: { '0%': { transform: 'scale(0.95)' }, '100%': { transform: 'scale(1)' } },
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background-color: #000000; font-family: 'Lato', sans-serif; }
+    .card-hover {
+      transition: transform 0.25s ease, box-shadow 0.3s ease;
+      background: #1F1F1F;
+    }
+    .card-hover:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 25px -12px rgba(255, 255, 255, 0.1);
+    }
+    .sticky-nav {
+      backdrop-filter: blur(12px);
+      background: rgba(0, 0, 0, 0.85);
+      border-bottom: 1px solid #2a2a2a;
+    }
+    .nav-link {
+      transition: color 0.2s;
+    }
+    .nav-link:hover {
+      color: #9ca3af;
+    }
+    .gallery-img {
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #111;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #444;
+      border-radius: 10px;
+    }
+    .line-clamp-2 {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body class="bg-black text-gray-200 antialiased">
+
+  <header class="sticky top-0 z-40 w-full sticky-nav shadow-md" id="main-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-wrap items-center justify-between gap-3">
+      <a href="/" class="text-2xl md:text-3xl font-display font-bold tracking-tight text-white hover:text-gray-300 transition">
+        HOME<span class="text-gray-500">MUSE</span><span class="text-xs text-gray-500 ml-1">GALLERY</span>
+      </a>
+      <nav class="flex flex-wrap gap-6 text-sm font-medium">
+        <a href="/" class="nav-link text-gray-300 hover:text-white transition">Home</a>
+        <a href="/gallery.html" class="nav-link text-gray-300 hover:text-white transition border-b border-white/40">Gallery</a>
+        <a href="/blog.html" class="nav-link text-gray-300 hover:text-white transition">Blog</a>
+        <a href="/about.html" class="nav-link text-gray-300 hover:text-white transition">About</a>
+        <a href="/contact.html" class="nav-link text-gray-300 hover:text-white transition">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="relative bg-gradient-to-b from-black via-gray-950 to-black py-20 md:py-28">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight mb-5">Design Gallery</h1>
+      <div class="w-24 h-px bg-white/30 mx-auto mb-6 rounded-full"></div>
+      <p class="text-xl md:text-2xl text-gray-300 font-body max-w-2xl mx-auto">Curated inspiration for every room — from cozy bedrooms to serene baths</p>
+    </div>
+  </section>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+    
+    <section id="bedroom" class="mb-20 scroll-mt-24">
+      <div class="flex items-center gap-3 mb-8">
+        <h2 class="font-display text-3xl md:text-4xl font-semibold text-white">Bedroom Designs</h2>
+        <span class="bg-white/10 text-gray-300 text-sm px-3 py-1 rounded-full font-medium">9 serene retreats</span>
+      </div>
+      <div id="bedroom-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
+    </section>
+
+    <section id="living" class="mb-20 scroll-mt-24">
+      <div class="flex items-center gap-3 mb-8">
+        <h2 class="font-display text-3xl md:text-4xl font-semibold text-white">Living Room Inspirations</h2>
+        <span class="bg-white/10 text-gray-300 text-sm px-3 py-1 rounded-full font-medium">5 modern concepts</span>
+      </div>
+      <div id="living-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
+    </section>
+
+    <section id="mudroom" class="mb-20 scroll-mt-24">
+      <div class="flex items-center gap-3 mb-8">
+        <h2 class="font-display text-3xl md:text-4xl font-semibold text-white">Mudroom Designs</h2>
+        <span class="bg-white/10 text-gray-300 text-sm px-3 py-1 rounded-full font-medium">5 functional entries</span>
+      </div>
+      <div id="mudroom-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
+    </section>
+
+    <section id="bathroom" class="mb-20 scroll-mt-24">
+      <div class="flex items-center gap-3 mb-8">
+        <h2 class="font-display text-3xl md:text-4xl font-semibold text-white">Bathroom Retreats</h2>
+        <span class="bg-white/10 text-gray-300 text-sm px-3 py-1 rounded-full font-medium">5 spa-like escapes</span>
+      </div>
+      <div id="bathroom-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
+    </section>
+  </main>
+
+  <footer class="border-t border-gray-800 bg-black py-8 text-center text-gray-500 text-sm">
+    <div class="max-w-7xl mx-auto px-4">© 2025 Home Muse — Curated interior inspiration for every room.</div>
+  </footer>
+
+  <script>
+    const bedroomImages = [
+      { img: "https://images.unsplash.com/photo-1540932239986-310128078ceb?w=500&auto=format", title: "Minimalist Serenity", desc: "Clean beige palette with soft pendant lighting and potted greenery" },
+      { img: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=500&auto=format", title: "Contemporary Luxury", desc: "Spacious master bedroom with ribbed texture walls and natural wood" },
+      { img: "https://images.unsplash.com/photo-1540932239986-310128078ceb?w=500&auto=format", title: "Modern Elegance", desc: "Sophisticated bedroom design with warm wood tones" },
+      { img: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=500&auto=format", title: "Cozy Contemporary", desc: "Warm and inviting bedroom with layered textures" },
+      { img: "https://images.unsplash.com/photo-1540932239986-310128078ceb?w=500&auto=format", title: "Clean Girl Aesthetic", desc: "Minimalist bedroom with neutral tones" },
+      { img: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=500&auto=format", title: "Warm Hygge", desc: "Cozy bedroom with soft lighting and comfortable textures" },
+      { img: "https://images.unsplash.com/photo-1540932239986-310128078ceb?w=500&auto=format", title: "Dreamy Retreat", desc: "Bedroom with warm ambient lighting" },
+      { img: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=500&auto=format", title: "Luxe Lighting Design", desc: "Elegant bedroom featuring sophisticated lighting" },
+      { img: "https://images.unsplash.com/photo-1540932239986-310128078ceb?w=500&auto=format", title: "Scandinavian Simplicity", desc: "Light and airy bedroom with minimalist design" }
+    ];
+    
+    const livingImages = [
+      { img: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=500&auto=format", title: "Panoramic Minimalism", desc: "Sophisticated living room with floor-to-ceiling windows" },
+      { img: "https://images.unsplash.com/photo-1493857671505-72967e2e2760?w=500&auto=format", title: "Transitional Warmth", desc: "Cozy living room blending traditional and modern" },
+      { img: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=500&auto=format", title: "Contemporary Comfort", desc: "Modern living space with layered textures" },
+      { img: "https://images.unsplash.com/photo-1493857671505-72967e2e2760?w=500&auto=format", title: "Warm Minimalist", desc: "Designer living room with warm grey tones" },
+      { img: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=500&auto=format", title: "Serene Elegance", desc: "Light-filled living room with neutral palette" }
+    ];
+    
+    const mudroomImages = [
+      { img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&auto=format", title: "Organized Entryway", desc: "Bright mudroom with built-in storage and woven baskets" },
+      { img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&auto=format", title: "Smart Storage", desc: "Functional mudroom design with clever organization" },
+      { img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&auto=format", title: "Modern Entry", desc: "Contemporary mudroom with clean lines" },
+      { img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&auto=format", title: "Farmhouse Functional", desc: "Rustic mudroom with practical storage" },
+      { img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&auto=format", title: "Compact & Clever", desc: "Small mudroom maximizing space" }
+    ];
+    
+    const bathroomImages = [
+      { img: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=500&auto=format", title: "Desert Oasis Spa", desc: "Luxurious bathroom with freestanding tub" },
+      { img: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=500&auto=format", title: "Rustic Luxury", desc: "Warm and inviting bathroom with natural stone" },
+      { img: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=500&auto=format", title: "Modern Spa Retreat", desc: "Contemporary bathroom with elegant lighting" },
+      { img: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=500&auto=format", title: "Luxury Master Bath", desc: "Premium bathroom featuring spa-like amenities" },
+      { img: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=500&auto=format", title: "Serene Sanctuary", desc: "Peaceful bathroom with minimalist design" }
+    ];
+    
+    function generateCard(imgUrl, title, description) {
+      return `
+        <div class="card-hover rounded-xl overflow-hidden shadow-md transition-all cursor-pointer group">
+          <div class="relative overflow-hidden bg-gray-800 gallery-img">
+            <img src="${imgUrl}" alt="${title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+          </div>
+          <div class="p-4">
+            <h3 class="font-display text-lg font-semibold text-white truncate">${title}</h3>
+            <p class="text-gray-400 text-sm mt-1 line-clamp-2">${description}</p>
+          </div>
+        </div>
+      `;
+    }
+    
+    const bedroomContainer = document.getElementById('bedroom-grid');
+    bedroomImages.forEach((item) => {
+      const card = generateCard(item.img, item.title, item.desc);
+      bedroomContainer.insertAdjacentHTML('beforeend', card);
+    });
+    
+    const livingContainer = document.getElementById('living-grid');
+    livingImages.forEach((item) => {
+      const card = generateCard(item.img, item.title, item.desc);
+      livingContainer.insertAdjacentHTML('beforeend', card);
+    });
+    
+    const mudroomContainer = document.getElementById('mudroom-grid');
+    mudroomImages.forEach((item) => {
+      const card = generateCard(item.img, item.title, item.desc);
+      mudroomContainer.insertAdjacentHTML('beforeend', card);
+    });
+    
+    const bathroomContainer = document.getElementById('bathroom-grid');
+    bathroomImages.forEach((item) => {
+      const card = generateCard(item.img, item.title, item.desc);
+      bathroomContainer.insertAdjacentHTML('beforeend', card);
+    });
+  </script>
+</body>
+</html>
