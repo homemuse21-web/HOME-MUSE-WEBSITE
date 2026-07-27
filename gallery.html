@@ -1,20 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Home Muse Gallery | Curated Interiors</title>
-  
-  <!-- Google Tag Manager -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-92TVJ42TQW"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-92TVJ42TQW');
-  </script>
-  
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Home Muse | Gallery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -31,12 +21,12 @@
             'body': ['Lato', 'sans-serif'],
           },
           animation: {
-            'fade-in': 'fadeIn 0.4s ease-out',
-            'scale-in': 'scaleIn 0.2s ease',
+            'fade-in': 'fadeIn 0.5s ease-out',
+            'scale-in': 'scaleIn 0.25s ease',
           },
           keyframes: {
             fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
-            scaleIn: { '0%': { transform: 'scale(0.95)' }, '100%': { transform: 'scale(1)' } },
+            scaleIn: { '0%': { transform: 'scale(0.95)', opacity: '0' }, '100%': { transform: 'scale(1)', opacity: '1' } },
           }
         }
       }
@@ -45,184 +35,242 @@
   <style>
     html { scroll-behavior: smooth; }
     body { background-color: #000000; font-family: 'Lato', sans-serif; }
+    .sticky-nav {
+      backdrop-filter: blur(14px);
+      background: rgba(0, 0, 0, 0.82);
+      border-bottom: 1px solid #2a2a2a;
+    }
+    .nav-link {
+      color: #9ca3af;
+      transition: color 0.2s;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+    .nav-link:hover { color: #ffffff; }
+    .nav-link.active { color: #ffffff; }
     .card-hover {
-      transition: transform 0.25s ease, box-shadow 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       background: #1F1F1F;
     }
     .card-hover:hover {
       transform: translateY(-6px);
-      box-shadow: 0 20px 25px -12px rgba(255, 255, 255, 0.1);
-    }
-    .sticky-nav {
-      backdrop-filter: blur(12px);
-      background: rgba(0, 0, 0, 0.85);
-      border-bottom: 1px solid #2a2a2a;
-    }
-    .nav-link {
-      transition: color 0.2s;
-    }
-    .nav-link:hover {
-      color: #9ca3af;
+      box-shadow: 0 20px 30px -12px rgba(255, 255, 255, 0.08);
     }
     .gallery-img {
       aspect-ratio: 4 / 3;
       object-fit: cover;
     }
-    ::-webkit-scrollbar {
-      width: 6px;
+    .modal-overlay {
+      background: rgba(0, 0, 0, 0.92);
+      backdrop-filter: blur(8px);
     }
-    ::-webkit-scrollbar-track {
-      background: #111;
+    .modal-content {
+      animation: scaleIn 0.2s ease;
+      max-width: 92vw;
+      max-height: 88vh;
     }
-    ::-webkit-scrollbar-thumb {
-      background: #444;
-      border-radius: 10px;
-    }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #111; }
+    ::-webkit-scrollbar-thumb { background: #444; border-radius: 10px; }
     .line-clamp-2 {
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
+    .back-to-top {
+      transition: opacity 0.25s, visibility 0.25s, transform 0.25s;
+    }
+    .back-to-top.show {
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: auto !important;
+      transform: translateY(0) !important;
+    }
   </style>
 </head>
-<body class="bg-black text-gray-200 antialiased">
+<body>
 
-  <header class="sticky top-0 z-40 w-full sticky-nav shadow-md" id="main-header">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-wrap items-center justify-between gap-3">
-      <a href="/" class="text-2xl md:text-3xl font-display font-bold tracking-tight text-white hover:text-gray-300 transition">
+  <!-- ============ STICKY NAV ============ -->
+  <header class="sticky top-0 z-50 w-full sticky-nav shadow-md" id="main-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-3">
+      <a href="#" class="text-2xl md:text-3xl font-display font-bold tracking-tight text-white hover:text-gray-300 transition">
         HOME<span class="text-gray-500">MUSE</span><span class="text-xs text-gray-500 ml-1">GALLERY</span>
       </a>
-      <nav class="flex flex-wrap gap-6 text-sm font-medium">
-        <a href="/" class="nav-link text-gray-300 hover:text-white transition">Home</a>
-        <a href="/gallery.html" class="nav-link text-gray-300 hover:text-white transition border-b border-white/40">Gallery</a>
-        <a href="/blog.html" class="nav-link text-gray-300 hover:text-white transition">Blog</a>
-        <a href="/about.html" class="nav-link text-gray-300 hover:text-white transition">About</a>
-        <a href="/contact.html" class="nav-link text-gray-300 hover:text-white transition">Contact</a>
+      <nav class="flex flex-wrap gap-6 text-sm font-medium" id="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="gallery.html" class="nav-link active">Gallery</a>
+        <a href="contact.html" class="nav-link">Contact</a>
       </nav>
     </div>
   </header>
 
+  <!-- ============ HERO ============ -->
   <section class="relative bg-gradient-to-b from-black via-gray-950 to-black py-20 md:py-28">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+    <div class="max-w-4xl mx-auto px-4 text-center">
       <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight mb-5">Design Gallery</h1>
       <div class="w-24 h-px bg-white/30 mx-auto mb-6 rounded-full"></div>
-      <p class="text-xl md:text-2xl text-gray-300 font-body max-w-2xl mx-auto">Curated inspiration for every room — from cozy bedrooms to serene baths</p>
+      <p class="text-xl md:text-2xl text-gray-300 font-body max-w-2xl mx-auto">Curated inspiration for every room</p>
     </div>
   </section>
 
+  <!-- ============ GALLERY GRID ============ -->
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-    
-    <section id="bedroom" class="mb-20 scroll-mt-24">
+    <section id="gallery" class="scroll-mt-24">
       <div class="flex items-center gap-3 mb-8">
-        <h2 class="font-display text-3xl md:text-4xl font-semibold text-white">Bedroom Designs</h2>
-        <span class="bg-white/10 text-gray-300 text-sm px-3 py-1 rounded-full font-medium">9 serene retreats</span>
+        <h2 class="font-display text-3xl md:text-4xl font-semibold text-white">Cozy Bedroom Ideas</h2>
+        <span id="gallery-badge" class="bg-white/10 text-gray-300 text-sm px-3 py-1 rounded-full font-medium">6 inspirations</span>
       </div>
-      <div id="bedroom-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
-    </section>
-
-    <section id="living" class="mb-20 scroll-mt-24">
-      <div class="flex items-center gap-3 mb-8">
-        <h2 class="font-display text-3xl md:text-4xl font-semibold text-white">Living Room Inspirations</h2>
-        <span class="bg-white/10 text-gray-300 text-sm px-3 py-1 rounded-full font-medium">5 modern concepts</span>
-      </div>
-      <div id="living-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
-    </section>
-
-    <section id="mudroom" class="mb-20 scroll-mt-24">
-      <div class="flex items-center gap-3 mb-8">
-        <h2 class="font-display text-3xl md:text-4xl font-semibold text-white">Mudroom Designs</h2>
-        <span class="bg-white/10 text-gray-300 text-sm px-3 py-1 rounded-full font-medium">5 functional entries</span>
-      </div>
-      <div id="mudroom-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
-    </section>
-
-    <section id="bathroom" class="mb-20 scroll-mt-24">
-      <div class="flex items-center gap-3 mb-8">
-        <h2 class="font-display text-3xl md:text-4xl font-semibold text-white">Bathroom Retreats</h2>
-        <span class="bg-white/10 text-gray-300 text-sm px-3 py-1 rounded-full font-medium">5 spa-like escapes</span>
-      </div>
-      <div id="bathroom-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
+      <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
     </section>
   </main>
 
+  <!-- ============ BACK TO TOP ============ -->
+  <button id="backToTop" class="back-to-top fixed bottom-6 right-6 bg-white text-black p-3 rounded-full shadow-lg hover:bg-gray-200 transition-all duration-200 z-40 opacity-0 invisible pointer-events-none translate-y-4">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+    </svg>
+  </button>
+
+  <!-- ============ LIGHTBOX ============ -->
+  <div id="lightbox" class="fixed inset-0 z-50 hidden items-center justify-center modal-overlay" aria-hidden="true">
+    <div class="relative bg-black rounded-2xl max-w-4xl w-full mx-4 overflow-hidden shadow-2xl modal-content border border-gray-800">
+      <button id="closeLightbox" class="absolute top-4 right-4 bg-white/20 text-white rounded-full p-2 hover:bg-white/40 transition z-10 text-xl leading-none w-10 h-10 flex items-center justify-center">&times;</button>
+      <div class="flex flex-col md:flex-row">
+        <div class="md:w-2/3 bg-gray-900">
+          <img id="lightboxImg" src="" alt="lightbox" class="w-full h-auto object-contain max-h-[70vh] md:max-h-[75vh]" />
+        </div>
+        <div class="md:w-1/3 p-6 bg-black flex flex-col justify-center">
+          <h3 id="lightboxTitle" class="font-display text-2xl font-bold text-white mb-2"></h3>
+          <p id="lightboxDesc" class="text-gray-400 text-base leading-relaxed"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
   <footer class="border-t border-gray-800 bg-black py-8 text-center text-gray-500 text-sm">
-    <div class="max-w-7xl mx-auto px-4">© 2025 Home Muse — Curated interior inspiration for every room.</div>
+    <div class="max-w-7xl mx-auto px-4">
+      &copy; 2025 <span class="text-white font-medium">Home Muse</span> — Curated interior inspiration for every room.
+    </div>
   </footer>
 
   <script>
-    const bedroomImages = [
-      { img: "https://images.unsplash.com/photo-1540932239986-310128078ceb?w=500&auto=format", title: "Minimalist Serenity", desc: "Clean beige palette with soft pendant lighting and potted greenery" },
-      { img: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=500&auto=format", title: "Contemporary Luxury", desc: "Spacious master bedroom with ribbed texture walls and natural wood" },
-      { img: "https://images.unsplash.com/photo-1540932239986-310128078ceb?w=500&auto=format", title: "Modern Elegance", desc: "Sophisticated bedroom design with warm wood tones" },
-      { img: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=500&auto=format", title: "Cozy Contemporary", desc: "Warm and inviting bedroom with layered textures" },
-      { img: "https://images.unsplash.com/photo-1540932239986-310128078ceb?w=500&auto=format", title: "Clean Girl Aesthetic", desc: "Minimalist bedroom with neutral tones" },
-      { img: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=500&auto=format", title: "Warm Hygge", desc: "Cozy bedroom with soft lighting and comfortable textures" },
-      { img: "https://images.unsplash.com/photo-1540932239986-310128078ceb?w=500&auto=format", title: "Dreamy Retreat", desc: "Bedroom with warm ambient lighting" },
-      { img: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=500&auto=format", title: "Luxe Lighting Design", desc: "Elegant bedroom featuring sophisticated lighting" },
-      { img: "https://images.unsplash.com/photo-1540932239986-310128078ceb?w=500&auto=format", title: "Scandinavian Simplicity", desc: "Light and airy bedroom with minimalist design" }
+    // ----- Gallery data (6 images) -----
+    const galleryItems = [
+      { id: 'photo-1600607687644-c7171b42498f', title: 'Serene Bedroom', desc: 'Soft linen & layered textures for a calm retreat.' },
+      { id: 'photo-1616594039964-ae9021a400a0', title: 'Hygge Sanctuary', desc: 'Warm lighting and plush textiles create ultimate coziness.' },
+      { id: 'photo-1560185893-a55cbc8c57e8', title: 'Minimalist Calm', desc: 'Clean lines, plush rug, and a soothing neutral palette.' },
+      { id: 'photo-1566665797739-1674de7a421a', title: 'Earth Tone Retreat', desc: 'Natural wood and warm earthy hues for grounded comfort.' },
+      { id: 'photo-1617325247661-675ab4b64ae2', title: 'Rustic Modern', desc: 'Charming blend of rustic details and modern simplicity.' },
+      { id: 'photo-1505693416388-ac5e068d0b9a', title: 'Warm Inviting Nook', desc: 'A cozy corner that feels like a warm embrace.' }
     ];
-    
-    const livingImages = [
-      { img: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=500&auto=format", title: "Panoramic Minimalism", desc: "Sophisticated living room with floor-to-ceiling windows" },
-      { img: "https://images.unsplash.com/photo-1493857671505-72967e2e2760?w=500&auto=format", title: "Transitional Warmth", desc: "Cozy living room blending traditional and modern" },
-      { img: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=500&auto=format", title: "Contemporary Comfort", desc: "Modern living space with layered textures" },
-      { img: "https://images.unsplash.com/photo-1493857671505-72967e2e2760?w=500&auto=format", title: "Warm Minimalist", desc: "Designer living room with warm grey tones" },
-      { img: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=500&auto=format", title: "Serene Elegance", desc: "Light-filled living room with neutral palette" }
-    ];
-    
-    const mudroomImages = [
-      { img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&auto=format", title: "Organized Entryway", desc: "Bright mudroom with built-in storage and woven baskets" },
-      { img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&auto=format", title: "Smart Storage", desc: "Functional mudroom design with clever organization" },
-      { img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&auto=format", title: "Modern Entry", desc: "Contemporary mudroom with clean lines" },
-      { img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&auto=format", title: "Farmhouse Functional", desc: "Rustic mudroom with practical storage" },
-      { img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&auto=format", title: "Compact & Clever", desc: "Small mudroom maximizing space" }
-    ];
-    
-    const bathroomImages = [
-      { img: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=500&auto=format", title: "Desert Oasis Spa", desc: "Luxurious bathroom with freestanding tub" },
-      { img: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=500&auto=format", title: "Rustic Luxury", desc: "Warm and inviting bathroom with natural stone" },
-      { img: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=500&auto=format", title: "Modern Spa Retreat", desc: "Contemporary bathroom with elegant lighting" },
-      { img: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=500&auto=format", title: "Luxury Master Bath", desc: "Premium bathroom featuring spa-like amenities" },
-      { img: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=500&auto=format", title: "Serene Sanctuary", desc: "Peaceful bathroom with minimalist design" }
-    ];
-    
-    function generateCard(imgUrl, title, description) {
-      return `
-        <div class="card-hover rounded-xl overflow-hidden shadow-md transition-all cursor-pointer group">
-          <div class="relative overflow-hidden bg-gray-800 gallery-img">
-            <img src="${imgUrl}" alt="${title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
-          </div>
-          <div class="p-4">
-            <h3 class="font-display text-lg font-semibold text-white truncate">${title}</h3>
-            <p class="text-gray-400 text-sm mt-1 line-clamp-2">${description}</p>
-          </div>
+
+    const grid = document.getElementById('gallery-grid');
+    const badge = document.getElementById('gallery-badge');
+
+    galleryItems.forEach(item => {
+      const imgUrl = `https://images.unsplash.com/${item.id}?w=600&h=450&fit=crop&auto=format`;
+      const card = document.createElement('div');
+      card.className = 'card-hover rounded-xl overflow-hidden shadow-md transition-all cursor-pointer group';
+      card.dataset.img = imgUrl;
+      card.dataset.title = item.title;
+      card.dataset.desc = item.desc;
+      card.innerHTML = `
+        <div class="relative overflow-hidden bg-gray-800 gallery-img">
+          <img src="${imgUrl}" alt="${item.title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+        </div>
+        <div class="p-4">
+          <h3 class="font-display text-lg font-semibold text-white truncate">${item.title}</h3>
+          <p class="text-gray-400 text-sm mt-1 line-clamp-2">${item.desc}</p>
         </div>
       `;
+      grid.appendChild(card);
+    });
+    badge.textContent = galleryItems.length + ' inspirations';
+
+    // ----- Lightbox -----
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxTitle = document.getElementById('lightboxTitle');
+    const lightboxDesc = document.getElementById('lightboxDesc');
+    const closeBtn = document.getElementById('closeLightbox');
+
+    function openLightbox(imgUrl, title, desc) {
+      lightboxImg.src = imgUrl;
+      lightboxTitle.innerText = title;
+      lightboxDesc.innerText = desc;
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+      document.body.style.overflow = 'hidden';
     }
-    
-    const bedroomContainer = document.getElementById('bedroom-grid');
-    bedroomImages.forEach((item) => {
-      const card = generateCard(item.img, item.title, item.desc);
-      bedroomContainer.insertAdjacentHTML('beforeend', card);
+
+    function closeLightboxModal() {
+      lightbox.classList.add('hidden');
+      lightbox.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    grid.addEventListener('click', (e) => {
+      const card = e.target.closest('.card-hover');
+      if (!card) return;
+      const img = card.dataset.img;
+      const title = card.dataset.title;
+      const desc = card.dataset.desc;
+      if (img && title) openLightbox(img, title, desc);
     });
-    
-    const livingContainer = document.getElementById('living-grid');
-    livingImages.forEach((item) => {
-      const card = generateCard(item.img, item.title, item.desc);
-      livingContainer.insertAdjacentHTML('beforeend', card);
+
+    closeBtn.addEventListener('click', closeLightboxModal);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightboxModal();
     });
-    
-    const mudroomContainer = document.getElementById('mudroom-grid');
-    mudroomImages.forEach((item) => {
-      const card = generateCard(item.img, item.title, item.desc);
-      mudroomContainer.insertAdjacentHTML('beforeend', card);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('flex')) closeLightboxModal();
     });
-    
-    const bathroomContainer = document.getElementById('bathroom-grid');
-    bathroomImages.forEach((item) => {
-      const card = generateCard(item.img, item.title, item.desc);
-      bathroomContainer.insertAdjacentHTML('beforeend', card);
+
+    // ----- Back to top -----
+    const backBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        backBtn.classList.add('show');
+      } else {
+        backBtn.classList.remove('show');
+      }
+    });
+    backBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ----- Smooth scroll for Gallery link (already native) -----
+    // Highlight active nav link on scroll (Gallery only)
+    const navLinks = document.querySelectorAll('.nav-link');
+    const gallerySection = document.getElementById('gallery');
+
+    window.addEventListener('scroll', () => {
+      const galleryTop = gallerySection.getBoundingClientRect().top;
+      const threshold = 150;
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#gallery' && galleryTop < threshold) {
+          link.classList.add('active');
+        } else if (link.getAttribute('href') === '#') {
+          // Home or Contact – keep them non-active unless we want to highlight
+          // We'll keep Gallery active only if scroll is near gallery
+        }
+      });
+      // If at top, highlight Gallery? Or keep Gallery active by default.
+      if (window.scrollY < 200) {
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#gallery') link.classList.add('active');
+        });
+      }
+    });
+
+    // Ensure Gallery is active on load
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#gallery') link.classList.add('active');
     });
   </script>
 </body>
